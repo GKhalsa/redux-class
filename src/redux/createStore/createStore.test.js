@@ -37,18 +37,18 @@ describe('createStore', () => {
     store = createStore(currentCount, 0)
   });
 
-  it('sets initial state', () => {
+  it.skip('sets initial state', () => {
     expect(store.getState()).toBe(0);
   });
 
-  it('applies the reducer to the previous state', () => {
+  it.skip('applies the reducer to the previous state', () => {
     store.dispatch(increaseCounter);
     expect(store.getState()).toBe(1)
     store.dispatch(decreaseCounter);
     expect(store.getState()).toBe(0)
   });
 
-  it('can fire off subscribed listeners on state change', () => {
+  it.skip('can fire off subscribed listeners on state change', () => {
     let callback = sinon.spy()
     expect(callback.callCount).toBe(0)
 
@@ -57,7 +57,7 @@ describe('createStore', () => {
     expect(callback.callCount).toBe(1)
   });
 
-  it('accepts a combined reducer', () => {
+  it.skip('accepts a combined reducer', () => {
     const store = createStore(combineReducers({currentCount, currentWord}));
     store.dispatch(increaseCounter);
     store.dispatch(changeWord("helloWorld"));

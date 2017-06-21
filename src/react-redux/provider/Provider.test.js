@@ -21,7 +21,7 @@ describe('Provider', () => {
     };
     const Child = createChild();
 
-    it('should enforce a single child', () => {
+    it.skip('should enforce a single child', () => {
       const store = createStore(() => ({}));
 
       // Ignore propTypes warnings
@@ -52,7 +52,7 @@ describe('Provider', () => {
     })
 
 
-  it('should add the store to the child context', () => {
+  it.skip('should add the store to the child context', () => {
       const store = createStore(() => ({}));
 
       const spy = expect.spyOn(console, 'error');
