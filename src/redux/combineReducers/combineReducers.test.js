@@ -26,14 +26,17 @@ describe('combineReducers', () => {
   const changeWord = (word) => {return {type: "CHANGE_WORD", newWord: word}}
 
 
-  it.skip('returns a combined reducer object that maps state keys to reducers', () => {
+
+  it('returns a combined reducer object that maps state keys to reducers', () => {
     const reducer = combineReducers({currentCount,currentWord});
 
     expect(typeof reducer).toEqual("function");
     const state = reducer({}, increaseCounter);
-    expect(state).toBe({currentCount: 1, currentWord: ""});
+    expect(state.currentCount).toBe(1)
+    expect(state.currentWord).toBe("")
 
     const newState = reducer(state, changeWord("helloWorld"));
-    expect(newState).toBe({currentCount: 1, currentWord: "helloWorld"});
+    expect(newState.currentCount).toBe(1)
+    expect(newState.currentWord).toBe("helloWorld")
   });
 });

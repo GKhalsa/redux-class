@@ -1,6 +1,7 @@
 import expect from 'expect';
 import createStore from './createStore';
 import sinon from 'sinon';
+import combineReducers from '../combineReducers/combineReducers'
 
 describe('createStore', () => {
 
@@ -47,7 +48,6 @@ describe('createStore', () => {
     expect(store.getState()).toBe(0)
   });
 
-
   it('can fire off subscribed listeners on state change', () => {
     let callback = sinon.spy()
     expect(callback.callCount).toBe(0)
@@ -57,12 +57,12 @@ describe('createStore', () => {
     expect(callback.callCount).toBe(1)
   });
 
-  it.skip('accepts a combined reducer', () => {
+  it('accepts a combined reducer', () => {
     const store = createStore(combineReducers({currentCount, currentWord}));
     store.dispatch(increaseCounter);
     store.dispatch(changeWord("helloWorld"));
-    expect(store.getState()).toBe({currentCount: 1, currentWord: "helloWorld"});
+    expect(store.getState().currentCount).toBe(1)
+    expect(store.getState().currentWord).toBe("helloWorld")
   });
-
 
 });
