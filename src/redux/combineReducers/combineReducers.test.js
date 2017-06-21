@@ -1,3 +1,4 @@
+import combineReducers from './combineReducers';
 describe('combineReducers', () => {
 
   const currentCount = (state = 0, action) => {
