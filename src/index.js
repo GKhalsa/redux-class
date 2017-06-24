@@ -11,8 +11,8 @@ import rootReducer from './reducers';
 const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  // <Provider store={store}>
+    <App store={store} />,
+  // </Provider>,
    document.getElementById('root')
 );

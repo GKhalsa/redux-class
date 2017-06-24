@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-function changeCounter(state = 0 , action){
+function currentCount(state = 0 , action){
   switch(action.type){
     case "INCREASE_COUNTER":
      return state + 1;
@@ -22,7 +22,7 @@ function currentWord(state = "", action){
 
 
 const rootReducer = combineReducers({
-  changeCounter,
+  currentCount,
    currentWord
  });
 
