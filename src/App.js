@@ -22,7 +22,7 @@ class App extends Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    count: state.changeCounter
+    count: state.currentCount
   }
 }
 
